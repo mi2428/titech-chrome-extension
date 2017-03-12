@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Titech Chrome Extension",
+  "version": "2.1",
+  "description": "TokyoTechと東工大ポータルへの自動ログイン",
+  "browser_action": {
+    "default_icon": "icon/icon.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://portal.nap.gsic.titech.ac.jp/GetAccess/Login*"],
+      "include_globs": ["*Template=userpass_key*","*AUTHMETHOD=UserPassword*"],
+      "js": ["js/lib/jquery.min.js", "js/password.js"]
+    },
+    {
+      "matches": ["https://portal.nap.gsic.titech.ac.jp/GetAccess/Login*"],
+      "include_globs": ["*Template=idg_key*","*AUTHMETHOD=IG*"],
+      "js": ["js/lib/jquery.min.js", "js/matrix.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "https://portal.nap.gsic.titech.ac.jp/*",
+    "https://wlanauth.noc.titech.ac.jp/*"
+  ],
+  "icons": {
+    "128": "icon/icon.png"
+  }
+}

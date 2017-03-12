@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="css/options.css"/>
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/options.js"></script>
+  <title>Titech Chrome Extension</title>
+</head>
+<body>
+  <div id="content">
+    <div id="description" class="panel">
+      <h3 class="description-header">TokyoTech・東工大ポータルに自動ログインします</h3>
+      <p class="description-text" style="display: none;">TokyoTech・<a class="description-text hover-bar" href="http://portal.titech.ac.jp/" target="_blank">東工大ポータル</a>のログインに使用している学籍番号、パスワード、学生証記載のマトリクスコードを入力してください。これらのデータはローカルストレージ内に平文で格納され、ログイン試行時に参照されます。ローカルストレージの内容が他のWebサイトや拡張機能から読み取られることはありません。(Chromeのセキュリティ機構により保証されます)</p>
+      <p class="description-text" style="display: none;">マトリクスコードはエクスポートし、他のコンピュータのChromeにインポートすることができます。</p>
+    </div>
+    <div id="import-export" class="panel">
+      <p>マトリクスコードの<a id="import-btn" class="hover-bar">インポート</a>・<a id="export-btn" class="hover-bar">エクスポート</a></p>
+      <textarea id="import-export-area" class="fix-width" style="display: none;"></textarea>
+    </div>
+    <div id="password-auth" class="flex-panel panel">
+      <input id="student-id" class="password-auth-secret secret" type="text" placeholder="学籍番号"/>
+      <input id="password" class="password-auth-secret secret" type="password" placeholder="パスワード"/>
+    </div>
+    <table id="matrix-auth" class="fix-width panel">
+      <tbody >
+        <tr class="matrix-row">
+          <th></th> <th>A</th> <th>B</th> <th>C</th> <th>D</th> <th>E</th> <th>F</th> <th>G</th> <th>H</th> <th>I</th> <th>J</th>
+        </tr>
+        <tr class="matrix-row">
+          <th>1</th> <td id="m0"></td> <td id="m1"></td> <td id="m2"></td> <td id="m3"></td> <td id="m4"></td> <td id="m5"></td> <td id="m6"></td> <td id="m7"></td> <td id="m8"></td> <td id="m9"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>2</th> <td id="m10"></td> <td id="m11"></td> <td id="m12"></td> <td id="m13"></td> <td id="m14"></td> <td id="m15"></td> <td id="m16"></td> <td id="m17"></td> <td id="m18"></td> <td id="m19"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>3</th> <td id="m20"></td> <td id="m21"></td> <td id="m22"></td> <td id="m23"></td> <td id="m24"></td> <td id="m25"></td> <td id="m26"></td> <td id="m27"></td> <td id="m28"></td> <td id="m29"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>4</th> <td id="m30"></td> <td id="m31"></td> <td id="m32"></td> <td id="m33"></td> <td id="m34"></td> <td id="m35"></td> <td id="m36"></td> <td id="m37"></td> <td id="m38"></td> <td id="m39"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>5</th> <td id="m40"></td> <td id="m41"></td> <td id="m42"></td> <td id="m43"></td> <td id="m44"></td> <td id="m45"></td> <td id="m46"></td> <td id="m47"></td> <td id="m48"></td> <td id="m49"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>6</th> <td id="m50"></td> <td id="m51"></td> <td id="m52"></td> <td id="m53"></td> <td id="m54"></td> <td id="m55"></td> <td id="m56"></td> <td id="m57"></td> <td id="m58"></td> <td id="m59"></td>
+        </tr>
+        <tr class="matrix-row">
+          <th>7</th> <td id="m60"></td> <td id="m61"></td> <td id="m62"></td> <td id="m63"></td> <td id="m64"></td> <td id="m65"></td> <td id="m66"></td> <td id="m67"></td> <td id="m68"></td> <td id="m69"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="mode-ctrl" class="flex-panel panel">
+      <a role="button" id="login-enable-btn" class="mode mode-ctrl-btn btn">有効化</a>
+      <a role="button" id="login-disable-btn" class="mode mode-ctrl-btn btn">無効化</a>
+      <a role="button" id="login-matrix-btn" class="mode mode-ctrl-btn btn">マトリクス認証のみ</a>
+    </div>
+    <div id="storage-ctrl" class="flex-panel panel">
+      <a role="button" id="clear-btn" class="storage-ctrl-btn btn hover">削除</a>
+      <a role="button" id="save-btn" class="storage-ctrl-btn btn hover">保存</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+:root {
+  --col-item: #747474;
+  --col-item-selected: #EEEEEE;
+  --px-item-height: 30px;
+  --px-item-small-height: 15px;
+  --px-item-space: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#popup {
+  width: 200px;
+  margin: var(--px-item-space);
+}
+
+.btn {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  color: var(--col-item);
+  cursor: pointer;
+}
+
+.login-btn {
+  height: var(--px-item-height);
+  border: 1px solid var(--col-item-selected);
+  margin-bottom: var(--px-item-space);
+  line-height: var(--px-item-height);
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-btn:hover, .login-btn:focus {
+  background-color: var(--col-item-selected);
+}
+
+#option-btn {
+  height: var(--px-item-small-height);
+  line-height: var(--px-item-small-height);
+  font-size: 8px;
+  text-align: right;
+}
