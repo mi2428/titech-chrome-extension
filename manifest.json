@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Titech Chrome Extension",
-  "version": "2.1",
+  "version": "2.2",
   "description": "TokyoTechと東工大ポータルへの自動ログイン",
   "browser_action": {
     "default_icon": "icon/icon.png",
